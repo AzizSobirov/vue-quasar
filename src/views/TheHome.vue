@@ -46,7 +46,7 @@ import { useStore } from "../stores/store";
 
 const store = useStore();
 
-const vacancies = ref(true);
+const vacancies = ref(false);
 </script>
 <style lang="scss" scoped>
 .segment {

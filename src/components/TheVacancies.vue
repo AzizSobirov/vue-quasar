@@ -9,7 +9,8 @@
         />
 
         <q-badge class="status" v-if="vacancy.status == 'inactive'">
-          Снято с публикации продавцом
+          Снято с публикации <br />
+          продавцом
         </q-badge>
 
         <q-card-section
@@ -64,7 +65,12 @@ const props = defineProps({
   left: 0px;
   height: 25px;
   background: #ffc107;
+  border-radius: 0;
   cursor: pointer;
+
+  br {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -78,9 +84,20 @@ const props = defineProps({
     }
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
+  .avatar {
+    top: 85px;
+    right: 5px;
+  }
+  .status {
+    height: 35px;
+    br {
+      display: block;
+    }
+  }
   .text-subtitle1 {
     font-size: 14px;
+    line-height: 16px;
   }
   .text-h5 {
     font-size: 18px;
@@ -91,8 +108,13 @@ const props = defineProps({
   }
 
   .my-card .q-gutter-md > * {
-    margin-top: 5px;
-    margin-left: 0;
+    margin: 5px 0 0 !important;
+  }
+
+  .my-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
   }
 }
 </style>

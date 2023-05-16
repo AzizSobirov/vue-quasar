@@ -24,11 +24,6 @@
           class="q-pl-lg q-gutter-md col-12 col-sm-8"
           :class="vacancy.status == 'inactive' ? 'disabled' : ''"
         >
-          <div class="text-subtitle1 flex">
-            <div class="text-blue-grey-8">Дата публикации:</div>
-            <div class="q-ml-sm text-weight-bold">{{ vacancy.time }}</div>
-          </div>
-          <div class="text-subtitle1">{{ vacancy.location }}</div>
           <div class="text-h5 text-uppercase text-weight-medium">
             {{ vacancy.title }}
           </div>
@@ -84,7 +79,7 @@ const props = defineProps({
     background: #22a094;
   }
   &.new {
-    background: #F44336;
+    background: #f44336;
   }
 }
 
@@ -99,9 +94,15 @@ const props = defineProps({
     }
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
+  .avatar {
+    top: 85px;
+    right: 5px;
+  }
+
   .text-subtitle1 {
     font-size: 14px;
+    line-height: 16px;
   }
   .text-h5 {
     font-size: 18px;
@@ -112,8 +113,13 @@ const props = defineProps({
   }
 
   .my-card .q-gutter-md > * {
-    margin-top: 5px;
-    margin-left: 0;
+    margin: 5px 0 0 !important;
+  }
+
+  .my-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
   }
 }
 </style>
